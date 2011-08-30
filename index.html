@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>jQuery Explosion Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script>
+    <script type='text/javascript' src="explosion.js"/></script>
+  </head>
+  <body style="align:center">
+    <h1>jQuery Explosion Example</h1>
+    <h3>Click on something to see some 'splosions. You can attach multiple explosions to an action for multiple images at once.<h3>
+    <div style="margin: 0 auto;width: 25%;padding:4px;background-color:green;border: thin solid black;width=0%" class="explode-big">
+      <strong style="font-size:40px;">I explode with mighty vengance!</strong>
+    </div>
+    <br/>
+    <br/>
+    <div style="margin: 0 auto;width: 25%;padding:4px;background-color:green;border: thin solid black;width=0%" class="explode-small">
+      <strong style="font-size:40px;">I am a bit more subdued.</strong>
+    </div>
+    <script type='text/javascript'>
+      $(document).ready(function() {
+          $('.explode-big').click(function(event) {
+            $(event.currentTarget).explode({
+                img: 'star.png',
+                centerOn: event.currentTarget,
+                interval: 2,
+                minThrow: 500,
+                maxThrow: 800,
+                num: 50,
+                extraWidth: 100,
+                rotateSpeed: 30
+              });
+            });
+          $('.explode-small').click(function(event) {
+            $(event.currentTarget).explode({
+                img: 'star.png',
+                centerOn: event.currentTarget,
+                interval: 500,
+                minThrow: 2000,
+                maxThrow: 2500,
+                num: 3,
+                extraWidth: 200,
+                rotateSpeed: 5
+              });
+            });
+      });
+    </script>
+  </body>
+</html>
